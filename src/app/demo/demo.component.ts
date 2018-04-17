@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Avis } from '../models';
+import { Avis, Collegue } from '../models';
 
 @Component({
   selector: 'app-demo',
@@ -7,6 +7,8 @@ import { Avis } from '../models';
   styleUrls: ['./demo.component.scss']
 })
 export class DemoComponent implements OnInit {
+
+  collegueDefaut : Collegue = new Collegue("paul", "http://icons.iconarchive.com/icons/paomedia/small-n-flat/512/user-male-icon.png", 5);
 
   choix = " ";
  testAvis(avis: Avis){
