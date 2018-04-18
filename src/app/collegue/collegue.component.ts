@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Collegue } from '../models';
+import { Collegue, Avis } from '../models';
 
 @Component({
   selector: 'app-collegue',
@@ -8,6 +8,18 @@ import { Collegue } from '../models';
 })
 export class CollegueComponent implements OnInit {
   @Input() collegue : Collegue;
+
+  choix = " ";
+  testAvis(avis: Avis){
+ 
+   if( avis == "detester"){
+     this.choix = "vous avez cliquer sur détester";
+     
+   }else{
+     this.choix = "Vous avez cliquer sur aimer";
+   }
+ 
+  }
 
   constructor() { }
 
