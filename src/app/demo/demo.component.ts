@@ -8,7 +8,9 @@ import { Avis, Collegue } from '../models';
 })
 export class DemoComponent implements OnInit {
 
-  collegueDefaut : Collegue = new Collegue("paul", "http://icons.iconarchive.com/icons/paomedia/small-n-flat/512/user-male-icon.png", 5);
+  colleguesList :Collegue[] = [];
+  
+
 
   choix = " ";
  testAvis(avis: Avis){
@@ -21,7 +23,14 @@ export class DemoComponent implements OnInit {
 
  }
 
-  constructor() { }
+  constructor() {
+
+    this.colleguesList.push( new Collegue("paul", "http://icons.iconarchive.com/icons/paomedia/small-n-flat/512/user-male-icon.png", 5));
+    this.colleguesList.push( new Collegue("pierre", "http://icons.iconarchive.com/icons/paomedia/small-n-flat/512/user-male-icon.png", 6));
+    this.colleguesList.push( new Collegue("valerie", "http://icons.iconarchive.com/icons/paomedia/small-n-flat/512/user-male-icon.png", 30));
+    this.colleguesList.push( new Collegue("jean", "http://icons.iconarchive.com/icons/paomedia/small-n-flat/512/user-male-icon.png", 50));
+
+   }
 
   ngOnInit() {
   }

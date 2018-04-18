@@ -5,6 +5,7 @@
 <app-avis (avis)="testAvis($event)"></app-avis>
 {{choix}}
 
-<app-collegue [collegue]  = "collegueDefaut" (avis) ="testAvis($event)" ></app-collegue>
+<!-- <app-collegue [collegue]  = "collegueDefaut" ></app-collegue> -->
+<app-liste-collegues [collegues] = "colleguesList"></app-liste-collegues>
 
 

@@ -8,6 +8,7 @@ import { DemoComponent } from './demo/demo.component';
 import { BandeauComponent } from './bandeau/bandeau.component';
 import { AvisComponent } from './avis/avis.component';
 import { CollegueComponent } from './collegue/collegue.component';
+import { ListeColleguesComponent } from './liste-collegues/liste-collegues.component';
 
 
 
@@ -18,6 +19,7 @@ import { CollegueComponent } from './collegue/collegue.component';
     BandeauComponent,
     AvisComponent,
     CollegueComponent,
+    ListeColleguesComponent,
    
   ],
   imports: [
