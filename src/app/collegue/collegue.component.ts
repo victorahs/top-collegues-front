@@ -10,6 +10,8 @@ import { ColleguesService } from '../../app/services/collegues.service';
 export class CollegueComponent implements OnInit {
   @Input() collegue : Collegue;
 
+  aimerActifTest : boolean;
+
   
   // testAvis(avis: Avis){
  
@@ -34,6 +36,20 @@ export class CollegueComponent implements OnInit {
       this.sCollegues.donnerUnAvis(this.collegue, event);
     }
   }
+
+  aimerActif(){
+   if(this.collegue.score <= 1000){
+     console.log("bien");
+    
+     return this.aimerActifTest ;
+   
+   }else{
+     return false
+  }
+
+   }
+
+ 
 
   constructor(private sCollegues:ColleguesService) { }
 

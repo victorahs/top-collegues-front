@@ -1,4 +1,4 @@
-import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
 import { Avis } from '../models';
 
 @Component({
@@ -8,6 +8,8 @@ import { Avis } from '../models';
 })
 export class AvisComponent implements OnInit {
   @Output() avis: EventEmitter<Avis> = new EventEmitter();
+  @Input() aimerActif = true;
+  @Input() detesterActif = true;
 
   aimer(event){
     this.avis.emit(Avis.AIMER);
@@ -16,6 +18,8 @@ export class AvisComponent implements OnInit {
   detester(event){
     this.avis.emit(Avis.DETESTER);
   }
+
+  
 
   constructor() { }
 
