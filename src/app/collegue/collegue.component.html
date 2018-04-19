@@ -1,5 +1,5 @@
 
-<div class="card col-md-4">
+<div>
 
   <!--Card image-->
   <img class="img-fluid" src= {{collegue.img}} alt="Card image cap">
@@ -12,7 +12,7 @@
       <p class="card-text">{{collegue.score}}</p>
       
 
-      <app-avis (avis)="testAvis($event)"></app-avis>
+      <app-avis (avis)="score($event)"></app-avis>
      
   </div>
 

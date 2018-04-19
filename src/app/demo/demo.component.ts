@@ -15,7 +15,7 @@ export class DemoComponent implements OnInit {
   choix = " ";
  testAvis(avis: Avis){
 
-  if( avis == "detester"){
+  if( avis == Avis.DETESTER){
     this.choix = "vous avez cliquer sur détester";
   }else{
     this.choix = "Vous avez cliquer sur aimer";

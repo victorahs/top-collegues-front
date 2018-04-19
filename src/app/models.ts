@@ -1,6 +1,6 @@
 export enum Avis {
-AIMER = 'aimer',
-DETESTER = 'detester'
+AIMER = "AIMER" ,
+DETESTER = "DETESTER" 
 }
 
 export class Collegue {

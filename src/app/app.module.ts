@@ -9,6 +9,9 @@ import { BandeauComponent } from './bandeau/bandeau.component';
 import { AvisComponent } from './avis/avis.component';
 import { CollegueComponent } from './collegue/collegue.component';
 import { ListeColleguesComponent } from './liste-collegues/liste-collegues.component';
+import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ColleguesService } from './services/collegues.service';
 
 
 
@@ -20,13 +23,15 @@ import { ListeColleguesComponent } from './liste-collegues/liste-collegues.compo
     AvisComponent,
     CollegueComponent,
     ListeColleguesComponent,
+    HistoriqueVotesComponent,
    
   ],
   imports: [
     BrowserModule,
-    MDBBootstrapModule.forRoot()
+    MDBBootstrapModule.forRoot(),
+    HttpClientModule
   ],
-  providers: [],
+  providers: [ColleguesService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
