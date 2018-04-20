@@ -12,6 +12,20 @@ import { ListeColleguesComponent } from './liste-collegues/liste-collegues.compo
 import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ColleguesService } from './services/collegues.service';
+import { RouterModule, Routes } from '@angular/router';
+import { AccueilComponent } from './accueil/accueil.component';
+
+const appRoutes: Routes = [
+
+  { path: 'accueil', component: AccueilComponent }, 
+
+  { path: 'demo', component: DemoComponent }, 
+
+  { path: '',   redirectTo: '/accueil', pathMatch: 'full' }, 
+
+  
+];
+
 
 
 
@@ -23,13 +37,14 @@ import { ColleguesService } from './services/collegues.service';
     AvisComponent,
     CollegueComponent,
     ListeColleguesComponent,
-    HistoriqueVotesComponent,
+    AccueilComponent
    
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [ColleguesService],
   bootstrap: [AppComponent]
