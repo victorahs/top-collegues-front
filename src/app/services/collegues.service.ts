@@ -43,6 +43,20 @@ export class ColleguesService {
 
   }
 
+  //TODO à completer
+  getOneCollegues(pseudo: string):Promise<Collegue>  {
+    console.log(URL_BACKEND)
+    // récupérer la liste des collègues côté serveur
+
+    return this._http.get(URL_BACKEND + "/collegues/" + pseudo)
+    .toPromise()
+    .then((data: any) => {
+         return data.map((s:any) => new Collegue(s.pseudo, s.urlImage, s.score)); 
+    }, (error:any) => {
+          // cas erreur
+    });
+  }
+
 
 
 }

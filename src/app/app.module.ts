@@ -1,33 +1,29 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-import { MDBBootstrapModule } from 'angular-bootstrap-md';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
+import { MDBBootstrapModule } from "angular-bootstrap-md";
 
-
-import { AppComponent } from './app.component';
-import { DemoComponent } from './demo/demo.component';
-import { BandeauComponent } from './bandeau/bandeau.component';
-import { AvisComponent } from './avis/avis.component';
-import { CollegueComponent } from './collegue/collegue.component';
-import { ListeColleguesComponent } from './liste-collegues/liste-collegues.component';
-import { HistoriqueVotesComponent } from './historique-votes/historique-votes.component';
-import { HttpClientModule } from '@angular/common/http';
-import { ColleguesService } from './services/collegues.service';
-import { RouterModule, Routes } from '@angular/router';
-import { AccueilComponent } from './accueil/accueil.component';
+import { AppComponent } from "./app.component";
+import { DemoComponent } from "./demo/demo.component";
+import { BandeauComponent } from "./bandeau/bandeau.component";
+import { AvisComponent } from "./avis/avis.component";
+import { CollegueComponent } from "./collegue/collegue.component";
+import { ListeColleguesComponent } from "./liste-collegues/liste-collegues.component";
+import { HistoriqueVotesComponent } from "./historique-votes/historique-votes.component";
+import { HttpClientModule } from "@angular/common/http";
+import { ColleguesService } from "./services/collegues.service";
+import { RouterModule, Routes } from "@angular/router";
+import { AccueilComponent } from "./accueil/accueil.component";
+import { DetailsCollegueComponent } from './details-collegue/details-collegue.component';
 
 const appRoutes: Routes = [
+  { path: "accueil", component: AccueilComponent },
 
-  { path: 'accueil', component: AccueilComponent }, 
+  { path: "demo", component: DemoComponent },
 
-  { path: 'demo', component: DemoComponent }, 
+  { path: "", redirectTo: "/accueil", pathMatch: "full" },
 
-  { path: '',   redirectTo: '/accueil', pathMatch: 'full' }, 
-
-  
+  { path: "collegues/:pseudo", component: DetailsCollegueComponent }
 ];
-
-
-
 
 @NgModule({
   declarations: [
@@ -37,8 +33,8 @@ const appRoutes: Routes = [
     AvisComponent,
     CollegueComponent,
     ListeColleguesComponent,
-    AccueilComponent
-   
+    AccueilComponent,
+    DetailsCollegueComponent
   ],
   imports: [
     BrowserModule,
@@ -49,4 +45,4 @@ const appRoutes: Routes = [
   providers: [ColleguesService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}
