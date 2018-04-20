@@ -3,7 +3,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { Collegue, Avis} from '../models';
-import {environment} from '../../environments/environment';
+import {environment} from '../../environments/environment.prod';
 const URL_BACKEND = environment.backendUrl;
 @Injectable()
 export class ColleguesService {
