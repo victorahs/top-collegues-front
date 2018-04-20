@@ -9,8 +9,10 @@ import { ColleguesService } from '../../app/services/collegues.service';
 })
 export class CollegueComponent implements OnInit {
   @Input() collegue : Collegue;
+ aimerActif = true;
+ detesterActif = true;
 
-  aimerActifTest : boolean;
+ 
 
   
   // testAvis(avis: Avis){
@@ -25,33 +27,67 @@ export class CollegueComponent implements OnInit {
  
   // }
   score(event : Avis){
+    
 
+    if(this.collegue.score < 1000 && this.collegue.score >-1000 ){
+      this.aimerActif = true;
+      this.detesterActif = true;
+    }
+
+
+    console.log(this.collegue.score, "this.aimerActif=",this.aimerActif, "this.detesterActif=",this.detesterActif )
     if(event == Avis.AIMER){
+      
+      if(this.collegue.score >=1000){
+        this.aimerActif = false;
+        this.detesterActif = true;
+      }else{
       this.collegue.score += 10;
-      this.sCollegues.donnerUnAvis(this.collegue, event);
+      }
+      
       
     }else if( event == Avis.DETESTER ){
-
+      if(this.collegue.score <=-1000){
+        this.detesterActif = !this.detesterActif;
+        this.aimerActif = true;
+      }else{
       this.collegue.score -= 5;
-      this.sCollegues.donnerUnAvis(this.collegue, event);
+      }
+     
     }
-  }
 
-  aimerActif(){
-   if(this.collegue.score <= 1000){
-     console.log("bien");
+    this.sCollegues.donnerUnAvis(this.collegue, event);
+
     
-     return this.aimerActifTest ;
-   
-   }else{
-     return false
+
   }
 
-   }
+
+
+  // aimerActif(){
+  //  if(this.collegue.score <= 1000){
+  //    console.log("bien");
+    
+  //    return this.aimerActifTest ;
+   
+  //  }else{
+  //    return false
+  // }
+
+
+  //  }
+
+  
+
+  
+  
+
 
  
 
-  constructor(private sCollegues:ColleguesService) { }
+  constructor(private sCollegues:ColleguesService) {
+    
+   }
 
   ngOnInit() {
   }
