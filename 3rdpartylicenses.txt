@@ -79,6 +79,10 @@ MIT
 MIT
 MIT
 
+@angular/router@5.2.10
+MIT
+MIT
+
 @angular/forms@5.2.10
 MIT
 MIT
