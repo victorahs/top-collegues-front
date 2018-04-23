@@ -8,6 +8,7 @@ import { ColleguesService } from '../../app/services/collegues.service';
   styleUrls: ['./liste-collegues.component.scss']
 })
 export class ListeColleguesComponent implements OnInit {
+  searchText : string = "";
 
   @Input() collegues : Array<Collegue>;
 

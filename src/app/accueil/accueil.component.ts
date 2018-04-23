@@ -8,13 +8,11 @@ import { ColleguesService } from '../../app/services/collegues.service';
   styleUrls: ['./accueil.component.scss']
 })
 export class AccueilComponent implements OnInit {
-collegues : Array<Collegue>
-  constructor(private sCollegues:ColleguesService) { }
+
+  constructor() { }
 
   ngOnInit() {
-    this.sCollegues.listerCollegues().then((data:any) => {
-      this.collegues = data;
-     })
+    
   }
 
 }
