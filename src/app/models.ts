@@ -15,3 +15,13 @@ export class Collegue {
     Object.assign(this, obj);
   }
 }
+
+export class AjoutCollegue{
+    matricule:string; 
+    pseudo:string; 
+    urlImage: string
+
+    constructor(obj: any) {
+        Object.assign(this, obj);
+      }
+}

@@ -15,6 +15,7 @@ import { DetailsCollegueComponent } from "./details-collegue/details-collegue.co
 import { ScorePipe } from './pipes/score.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
 import { FormsModule }   from '@angular/forms';
+import { AjouterUnCollegueComponent } from './ajouter-un-collegue/ajouter-un-collegue.component';
 
 const appRoutes: Routes = [
   { path: "accueil", component: AccueilComponent },
@@ -22,8 +23,12 @@ const appRoutes: Routes = [
   { path: "demo", component: DemoComponent },
 
   { path: "", redirectTo: "/accueil", pathMatch: "full" },
+  
+  { path : "collegues/ajouter", component: AjouterUnCollegueComponent}, 
 
   { path: "collegues/:pseudo", component: DetailsCollegueComponent }
+
+  
 ];
 
 @NgModule({
@@ -37,7 +42,8 @@ const appRoutes: Routes = [
     AccueilComponent,
     DetailsCollegueComponent,
     ScorePipe,
-    FilterPipe
+    FilterPipe,
+    AjouterUnCollegueComponent
   ],
   imports: [
     BrowserModule,

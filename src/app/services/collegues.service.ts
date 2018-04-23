@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
-import { Collegue, Avis} from '../models';
+import { Collegue, Avis, AjoutCollegue} from '../models';
 import {environment} from '../../environments/environment';
 const URL_BACKEND = environment.backendUrl;
 @Injectable()
@@ -55,6 +55,34 @@ export class ColleguesService {
     }, (error:any) => {
           // cas erreur
     });
+  }
+
+
+  //TODO envoyer un collegue au serveur
+  sendCollegue(unAjoutCollegue:AjoutCollegue):Promise<AjoutCollegue>  {
+    const httpOptions = {
+          headers: new HttpHeaders({
+            "Content-Type": "application/json"
+          })
+        };
+    // TODO Aimer ou Détester un collègue côté serveur
+    return this._http.post(URL_BACKEND + "/collegues/ajouter", 
+    {
+
+    "matricule" : unAjoutCollegue.matricule,
+    "pseudo" : unAjoutCollegue.pseudo,
+    "url" : unAjoutCollegue.urlImage
+
+
+
+
+    },
+    httpOptions)
+    .toPromise()
+    .then((data : any) =>{
+      return data;
+    })
+
   }
 
 
