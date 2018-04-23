@@ -1,7 +1,10 @@
 
 <div class = "container-fluid">
-<div class="row">
-  <div class="col-4" *ngFor="let col of collegues">
+    <label for="searchText">Filtrer par pseudo : </label>
+    <input [(ngModel)]="searchText" placeholder="search password" id="searchText">
+  <div class="row">
+
+  <div class="col-4" *ngFor="let col of collegues | filter : searchText">
     <app-collegue [collegue]="col"></app-collegue>
   </div>
 </div>

@@ -10,7 +10,7 @@
       <h4 class="card-title"> <a routerLink="/collegues/{{collegue.pseudo}}">{{collegue.pseudo}}</a>
         </h4>
       <!--Text-->
-      <p class="card-text">{{collegue.score}}</p>
+      <p class="card-text" [innerHtml]="collegue.score | score"></p>
       
 
       <app-avis (avis)="score($event)" [aimerActif]="aimerActif" [detesterActif]="detesterActif"></app-avis>

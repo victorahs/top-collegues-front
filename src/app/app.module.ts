@@ -13,6 +13,8 @@ import { RouterModule, Routes } from "@angular/router";
 import { AccueilComponent } from "./accueil/accueil.component";
 import { DetailsCollegueComponent } from "./details-collegue/details-collegue.component";
 import { ScorePipe } from './pipes/score.pipe';
+import { FilterPipe } from './pipes/filter.pipe';
+import { FormsModule }   from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: "accueil", component: AccueilComponent },
@@ -34,13 +36,15 @@ const appRoutes: Routes = [
     ListeColleguesComponent,
     AccueilComponent,
     DetailsCollegueComponent,
-    ScorePipe
+    ScorePipe,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
     MDBBootstrapModule.forRoot(),
     HttpClientModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule
   ],
   providers: [ColleguesService],
   bootstrap: [AppComponent]
