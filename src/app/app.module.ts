@@ -12,6 +12,7 @@ import { ColleguesService } from "./services/collegues.service";
 import { RouterModule, Routes } from "@angular/router";
 import { AccueilComponent } from "./accueil/accueil.component";
 import { DetailsCollegueComponent } from "./details-collegue/details-collegue.component";
+import { ScorePipe } from './pipes/score.pipe';
 
 const appRoutes: Routes = [
   { path: "accueil", component: AccueilComponent },
@@ -32,7 +33,8 @@ const appRoutes: Routes = [
     CollegueComponent,
     ListeColleguesComponent,
     AccueilComponent,
-    DetailsCollegueComponent
+    DetailsCollegueComponent,
+    ScorePipe
   ],
   imports: [
     BrowserModule,

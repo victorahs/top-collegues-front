@@ -10,7 +10,7 @@ export class Collegue {
   adresse: string;
   nom: string;
   prenom: string;
-  emai: string
+  email: string
   constructor(obj: any) {
     Object.assign(this, obj);
   }
