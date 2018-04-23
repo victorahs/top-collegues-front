@@ -16,7 +16,7 @@ export class ColleguesService {
     return this._http.get(URL_BACKEND + "/collegues")
     .toPromise()
     .then((data: any) => {
-         return data.map((s:any) => new Collegue(s.pseudo, s.urlImage, s.score)); 
+         return data.map((s:any) => new Collegue(s)); 
     }, (error:any) => {
           // cas erreur
     });
@@ -29,7 +29,7 @@ export class ColleguesService {
           })
         };
     // TODO Aimer ou Détester un collègue côté serveur
-    return this._http.patch(URL_BACKEND + "/collegues/" + unCollegue.name,
+    return this._http.patch(URL_BACKEND + "/collegues/" + unCollegue.pseudo,
     {
 
     "action" : avis
@@ -51,7 +51,7 @@ export class ColleguesService {
     return this._http.get(URL_BACKEND + "/collegues/" + pseudo)
     .toPromise()
     .then((data: any) => {
-         return data.map((s:any) => new Collegue(s.pseudo, s.urlImage, s.score)); 
+         return data;
     }, (error:any) => {
           // cas erreur
     });

@@ -1,3 +1,30 @@
-<p>
-  details-collegue works!
-</p>
+
+<div class ="container">
+<div class="card">
+
+  <!--Card image-->
+  <div class="view hm-white-slight waves-light" mdbWavesEffect>
+    <img src= {{collegue?.urlImage}} class="img-fluid" alt="Card image with a tree in a middle of a lake.">
+    <a>
+      <div class="mask"></div>
+    </a>
+  </div>
+
+  <!--Card content-->
+  <div class="card-body">
+    <!--Title-->
+    <h4 class="card-title">{{collegue?.pseudo}}</h4>
+    <!--Text-->
+    <p class="card-text">{{collegue?.score}}</p>
+    <p>Nom : {{collegue?.nom}}</p>
+    <p>Prénom : {{collegue?.prenom}} </p>
+    <p>Adresse : {{collegue?.adresse}}</p>
+    <p>Email : {{collegue?.email}} </p>
+  
+
+
+    <app-avis (avis)="score($event)" [aimerActif]="aimerActif" [detesterActif]="detesterActif"></app-avis>
+  </div>
+
+</div>
+</div>
