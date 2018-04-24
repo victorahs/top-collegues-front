@@ -1,6 +1,6 @@
  {{ajoutCollegue | json}}
         
-        <form (ngSubmit)="submit(monForm.value)" #monForm="ngForm">
+        <form (ngSubmit)="submit()" #monForm="ngForm">
 
             <label for ="matricule">Matricule</label><input [(ngModel)]="ajoutCollegue.matricule" name ="matricule" id= "matricule" #matricule="ngModel" required >
 
