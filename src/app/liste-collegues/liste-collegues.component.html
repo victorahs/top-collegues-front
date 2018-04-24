@@ -2,7 +2,10 @@
 <div class = "container-fluid">
     <label for="searchText">Filtrer par pseudo : </label>
     <input [(ngModel)]="searchText" placeholder="search password" id="searchText">
-  <div class="row">
+    <button type="button" class="btn btn-dark-green waves-light" mdbWavesEffect routerLink="../collegues/ajouter">Ajouter un collegue</button>
+    <button type="button" class="btn btn-dark-green waves-light" mdbWavesEffect routerLink="../accueil">Rafraichir la liste</button>
+  
+    <div class="row">
 
   <div class="col-4" *ngFor="let col of collegues | filter : searchText">
     <app-collegue [collegue]="col"></app-collegue>

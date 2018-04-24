@@ -19,7 +19,7 @@ export class Collegue {
 export class AjoutCollegue{
     matricule:string; 
     pseudo:string; 
-    urlImage: string
+    url: string
 
     constructor(obj: any) {
         Object.assign(this, obj);

@@ -4,11 +4,12 @@ import {HttpClient, HttpHeaders} from '@angular/common/http';
 
 import { Collegue, Avis, AjoutCollegue} from '../models';
 import {environment} from '../../environments/environment';
+import {Router} from '@angular/router';
 const URL_BACKEND = environment.backendUrl;
 @Injectable()
 export class ColleguesService {
  
-  constructor(private _http:HttpClient) { }
+  constructor(private _http:HttpClient, private router: Router) { }
 
   listerCollegues():Promise<Collegue[]>  {
     console.log(URL_BACKEND)
@@ -71,7 +72,7 @@ export class ColleguesService {
 
     "matricule" : unAjoutCollegue.matricule,
     "pseudo" : unAjoutCollegue.pseudo,
-    "url" : unAjoutCollegue.urlImage
+    "url" : unAjoutCollegue.url
 
 
 
@@ -80,7 +81,9 @@ export class ColleguesService {
     httpOptions)
     .toPromise()
     .then((data : any) =>{
+      this.router.navigate(['/accueil']);
       return data;
+      
     })
 
   }

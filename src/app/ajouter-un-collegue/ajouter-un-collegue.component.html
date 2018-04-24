@@ -1,11 +1,12 @@
-
+ {{ajoutCollegue | json}}
+        
         <form (ngSubmit)="submit(monForm.value)" #monForm="ngForm">
 
             <label for ="matricule">Matricule</label><input [(ngModel)]="ajoutCollegue.matricule" name ="matricule" id= "matricule" #matricule="ngModel" required >
 
             <label for ="pseudo">Pseudo</label><input [(ngModel)]="ajoutCollegue.pseudo" name= "pseudo" id= "pseudo" #pseudo="ngModel" required minlength="2">
 
-            <label for= "url">URL image</label><input [(ngModel)]="ajoutCollegue.urlImage" name= "url" id= "url" >
+            <label for= "url">URL image</label><input [(ngModel)]="ajoutCollegue.url" name= "url" id= "url" >
 
             <button type="submit" [disabled]="!(matricule.valid&&pseudo.valid)">Submit</button>
         </form>`
