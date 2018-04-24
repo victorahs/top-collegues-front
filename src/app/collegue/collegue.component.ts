@@ -56,7 +56,7 @@ export class CollegueComponent implements OnInit {
      
     }
 
-    this.sCollegues.donnerUnAvis(this.collegue, event);
+    this.sCollegues.donnerUnAvis(this.collegue, event).subscribe();
 
     
 

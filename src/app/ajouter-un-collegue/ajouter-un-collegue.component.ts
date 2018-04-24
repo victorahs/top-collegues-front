@@ -10,7 +10,7 @@ import { ColleguesService } from '../../app/services/collegues.service';
 export class AjouterUnCollegueComponent implements OnInit {
   ajoutCollegue : AjoutCollegue = new AjoutCollegue(null);
   submit() { 
-    this.sCollegues.sendCollegue(this.ajoutCollegue).then((data:any) => {
+    this.sCollegues.sendCollegue(this.ajoutCollegue).subscribe((data:any) => {
       
       this.ajoutCollegue = data;
      })

@@ -70,7 +70,7 @@ export class DetailsCollegueComponent implements OnInit {
      
     }
 
-    this.sCollegues.donnerUnAvis(this.collegue, event);
+    this.sCollegues.donnerUnAvis(this.collegue, event).subscribe();
 
     
 
@@ -78,7 +78,7 @@ export class DetailsCollegueComponent implements OnInit {
 
   ngOnInit() {
 
-    this.sCollegues.getOneCollegues(this.pseudo).then((data:any) => {
+    this.sCollegues.getOneCollegues(this.pseudo).subscribe((data:any) => {
       this.collegue = data;
      })
 

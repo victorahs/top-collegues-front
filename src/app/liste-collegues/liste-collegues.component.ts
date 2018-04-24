@@ -16,7 +16,7 @@ export class ListeColleguesComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.sCollegues.listerCollegues().then((data:any) => {
+    this.sCollegues.listerCollegues().subscribe((data:any) => {
      this.collegues = data;
     })
   }
