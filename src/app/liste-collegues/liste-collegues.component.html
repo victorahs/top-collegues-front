@@ -3,7 +3,7 @@
     <label for="searchText">Filtrer par pseudo : </label>
     <input [(ngModel)]="searchText" placeholder="search password" id="searchText">
     <button type="button" class="btn btn-dark-green waves-light" mdbWavesEffect routerLink="../collegues/ajouter">Ajouter un collegue</button>
-    <button type="button" class="btn btn-dark-green waves-light" mdbWavesEffect routerLink="../accueil">Rafraichir la liste</button>
+    <button type="button" onclick='window.location.reload(false)' class="btn btn-dark-green waves-light" mdbWavesEffect>Rafraichir la liste</button>
   
     <div class="row">
 

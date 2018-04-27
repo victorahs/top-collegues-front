@@ -24,4 +24,24 @@ export class AjoutCollegue{
     constructor(obj: any) {
         Object.assign(this, obj);
       }
+
+
+}
+
+export class Vote{
+    
+  constructor(public collegue:Collegue, public avis:Avis, public score:number){
+ 
+  }
+
+  get Collegue(){
+      return this.collegue;
+  }
+
+  get Avis(){
+      return this.avis;
+  }
+  get Note(){
+    return this.score;
+  }
 }

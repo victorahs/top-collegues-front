@@ -2,12 +2,13 @@ import { Injectable } from '@angular/core';
 
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 
-import { Collegue, Avis, AjoutCollegue} from '../models';
+import { Collegue, Avis, AjoutCollegue, Vote} from '../models';
 import {environment} from '../../environments/environment';
 import {Router} from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/do';
+import { Subject } from "rxjs/Subject";
 
 const URL_BACKEND = environment.backendUrl;
 @Injectable()
@@ -78,9 +79,10 @@ export class ColleguesService {
     },
      httpOptions)
    
-    .do((data : any) =>{
-      return data;
-   })
+     .do(collegue => {
+              const vote: Vote = new Vote(collegue, avis, collegue.score);
+             this.action.next(vote);
+           });
 
 
 
@@ -152,7 +154,7 @@ export class ColleguesService {
             "Content-Type": "application/json"
           })
         };
-    // TODO Aimer ou Détester un collègue côté serveur
+
     return this._http.post(URL_BACKEND + "/collegues/ajouter", 
     {
 
@@ -173,6 +175,14 @@ export class ColleguesService {
     })
 
   }
+
+  private action = new Subject<Vote>();
+
+  get actionObservable() {
+        return this.action.asObservable();
+      }
+    
+    
 
 
 
